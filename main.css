@@ -25,7 +25,7 @@ body {
 
 .shop-oval {
   display: inline-block;
-  border: 2px solid #8B5A2B;
+  border: 2px solid #aba52d;
   border-radius: 999px;
   padding: 8px 28px;
   margin-top: 18px;
@@ -76,7 +76,7 @@ header {
 /* Make the shop oval a light cream so it stands out */
 .shop-oval {
   display: inline-block;
-  border: 2px solid #6b4725;
+  border: 2px solid #cdd531;
   border-radius: 999px;
   padding: 8px 28px;
   margin-top: 18px;
