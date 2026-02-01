@@ -54,3 +54,37 @@ body {
 .site-nav a:active {
   transform: scale(0.98);
 }
+
+/* Header bar for a bit of contrast */
+header {
+  background-color: #F7D86B; /* slightly lighter honey */
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+
+/* Make the shop oval a light cream so it stands out */
+.shop-oval {
+  display: inline-block;
+  border: 2px solid #8B5A2B;
+  border-radius: 999px;
+  padding: 8px 28px;
+  margin-top: 18px;
+  background-color: #FFF6DF;
+}
+
+/* General text color tweaks */
+p, a {
+  color: #1f1f1f;
+}
+
+/* Slight spacing for nav links and remove separators */
+.site-nav a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 8px;
+  background-color: #E0B61A; /* slightly darker than page honey */
+  color: #000000;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
