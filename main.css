@@ -57,15 +57,24 @@ body {
 
 /* Header bar for a bit of contrast */
 header {
-  background-color: #F7D86B; /* slightly lighter honey */
+  background-color: #9f983e; /* slightly lighter honey */
   padding: 12px 0;
   margin-bottom: 12px;
+}
+
+/* Large page title */
+.page-title {
+  font-size: 48px;
+  color: #000000;
+  font-weight: 700;
+  margin: 10px 0;
+  padding: 0;
 }
 
 /* Make the shop oval a light cream so it stands out */
 .shop-oval {
   display: inline-block;
-  border: 2px solid #8B5A2B;
+  border: 2px solid #6b4725;
   border-radius: 999px;
   padding: 8px 28px;
   margin-top: 18px;
@@ -82,7 +91,7 @@ p, a {
   display: inline-block;
   padding: 8px 14px;
   margin: 0 8px;
-  background-color: #E0B61A; /* slightly darker than page honey */
+  background-color: #977806; /* slightly darker than page honey */
   color: #000000;
   text-decoration: none;
   border-radius: 999px;
