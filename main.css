@@ -40,7 +40,7 @@ body {
   display: inline-block;
   padding: 8px 14px;
   margin: 0 6px;
-  background-color: #E0B61A; /* slightly darker than page honey */
+  background-color: #ffdf6c; /* slightly darker than page honey */
   color: #000000;
   text-decoration: none;
   border-radius: 999px;
@@ -59,7 +59,7 @@ body {
 
 /* Header bar for a bit of contrast */
 header {
-  background-color: #9f983e; /* slightly lighter honey */
+  background-color: #f3e961; /* slightly lighter honey */
   padding: 12px 0;
   margin-bottom: 12px;
 }
