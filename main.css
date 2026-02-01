@@ -28,3 +28,29 @@ body {
   padding: 8px 28px;
   margin-top: 18px;
 }
+
+/* Navigation link boxes */
+.site-nav {
+  margin-top: 12px;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 6px;
+  background-color: #E0B61A; /* slightly darker than page honey */
+  color: #000000;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  transform: scale(1.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.site-nav a:active {
+  transform: scale(0.98);
+}
