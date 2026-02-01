@@ -1,11 +1,7 @@
 body {
-  background-color: rgb(166, 233, 104); 
+  background-color: #F0C419; 
   color: black;           
   font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 50px;
-}
-
-h1 {
-  color: #7ddf57;
 }
