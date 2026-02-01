@@ -5,3 +5,26 @@ body {
   text-align: center;
   margin-top: 50px;
 }
+
+/* Site title styling */
+.site-title {
+  color: #000000;
+  font-weight: 700;
+  margin: 0;
+  padding-top: 10px;
+}
+
+/* Shop label and oval container */
+.shop-text {
+  font-size: 30px;
+  color: #000000;
+  margin: 0;
+}
+
+.shop-oval {
+  display: inline-block;
+  border: 2px solid #8B5A2B;
+  border-radius: 999px;
+  padding: 8px 28px;
+  margin-top: 18px;
+}
