@@ -83,7 +83,7 @@ header {
   /* darker edges blend into the main header color */
   background-color: #0f7f5a; /* fallback */
   background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cstyle%3E.wave%7Bstroke:%231a6f5e;stroke-width:1;fill:none;opacity:0.5%7D%3C/style%3E%3Cpath class='wave' d='M5,0 Q3,15 5,30 Q7,50 5,80'/%3E%3Cpath class='wave' d='M15,0 Q10,20 15,40 Q20,65 15,80'/%3E%3Cpath class='wave' d='M25,0 Q21,12 25,25 Q29,45 25,80'/%3E%3Cpath class='wave' d='M35,0 Q32,18 35,35 Q38,60 35,80'/%3E%3Cpath class='wave' d='M45,0 Q41,14 45,32 Q49,55 45,80'/%3E%3Cpath class='wave' d='M55,0 Q52,22 55,42 Q58,62 55,80'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cstyle%3E.wave%7Bstroke:%231a6f5e;stroke-width:1;fill:none;opacity:0.5%7D%3C/style%3E%3Cpath class='wave' d='M5,0 Q0,8 5,16 Q10,28 5,38 Q5,50 5,65 Q5,73 5,80'/%3E%3Cpath class='wave' d='M15,0 Q8,10 15,22 Q22,35 15,48 Q12,60 15,72 Q15,76 15,80'/%3E%3Cpath class='wave' d='M25,0 Q18,12 25,25 Q32,38 25,52 Q22,65 25,75 Q25,78 25,80'/%3E%3Cpath class='wave' d='M35,0 Q28,11 35,23 Q42,37 35,50 Q32,63 35,74 Q35,77 35,80'/%3E%3Cpath class='wave' d='M45,0 Q38,9 45,20 Q52,32 45,45 Q42,58 45,70 Q45,76 45,80'/%3E%3Cpath class='wave' d='M55,0 Q48,13 55,27 Q62,40 55,55 Q52,68 55,78 Q55,79 55,80'/%3E%3C/svg%3E"),
     linear-gradient(
       to right,
       #0b6b49 0%,
