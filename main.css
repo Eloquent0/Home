@@ -163,18 +163,6 @@ p, a {
   line-height: 1.4;
 }
 
-/* Vertical connector line from header to dropdown */
-.dropdown-content::before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 12px;
-  width: 2px;
-  height: 90px;
-  background-color: #1a6f5e;
-  margin-bottom: 0;
-}
-
 /* Diagonal connector line flipped on x-axis and rotated 90° (pointing left) */
 .dropdown-content::after {
   content: '';
