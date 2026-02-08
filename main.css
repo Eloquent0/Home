@@ -141,12 +141,12 @@ p, a {
   color: white;
   padding: 12px 16px;
   border-radius: 8px;
-  min-width: 180px;
+  min-width: 220px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 200ms ease, visibility 200ms ease;
   z-index: 1000;
-  margin-top: 12px;
+  margin-top: 40px;
 }
 
 .dropdown-content p {
@@ -155,32 +155,30 @@ p, a {
   font-family: 'Unbounded', sans-serif;
 }
 
-/* Connector line (135° angle: down then diagonal) */
+/* Vertical connector line from Passion button */
 .dropdown-content::before {
   content: '';
   position: absolute;
   bottom: 100%;
   left: 50%;
   width: 2px;
-  height: 12px;
+  height: 28px;
   background-color: #1a6f5e;
   transform: translateX(-50%);
   margin-bottom: 0;
 }
 
+/* Diagonal connector line at 135° */
 .dropdown-content::after {
   content: '';
   position: absolute;
-  bottom: calc(100% + 12px);
+  bottom: calc(100% + 28px);
   left: 50%;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #1a6f5e;
-  border-top: none;
-  border-left: none;
-  border-radius: 0 8px 0 0;
+  width: 2px;
+  height: 14px;
+  background-color: #1a6f5e;
   transform: translateX(-50%) rotate(45deg);
-  transform-origin: bottom right;
+  transform-origin: bottom center;
 }
 
 /* Show dropdown on hover */
