@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap');
 
 html, body {
-  background-color: #F0C419;
+  background-color: #000000;
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -12,11 +12,26 @@ body {
   font-family: 'Unbounded', sans-serif;
   text-align: center;
   margin-top: 50px;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      #E8B81A 0px,
+      #E8B81A 1px,
+      #F0C419 1px,
+      #F0C419 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #E8B81A 0px,
+      #E8B81A 1px,
+      #F0C419 1px,
+      #F0C419 20px
+    );
 }
 
 /* Site title styling */
 .site-title {
-  color: #b19339;
+  color: #9f8843;
   font-weight: 700;
   margin: 0;
   padding-top: 10px;
