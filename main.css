@@ -45,7 +45,7 @@ body {
 
 .shop-oval {
   display: inline-block;
-  border: 2px solid #aba52d;
+  border: 2px solid #2d9b7a;
   border-radius: 999px;
   padding: 8px 28px;
   margin-top: 18px;
@@ -113,7 +113,7 @@ p, a {
   display: inline-block;
   padding: 8px 14px;
   margin: 0 8px;
-  background-color: #977806; /* slightly darker than page honey */
+  background-color: #9cd541; /* slightly darker than page honey */
   color: #000000;
   text-decoration: none;
   border-radius: 999px;
