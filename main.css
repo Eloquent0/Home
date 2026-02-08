@@ -83,7 +83,7 @@ header {
   /* darker edges blend into the main header color */
   background-color: #0f7f5a; /* fallback */
   background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cstyle%3E.wave%7Bstroke:%231a6f5e;fill:none;opacity:0.5%7D%3C/style%3E%3Cpath class='wave' stroke-width='1.6' d='M5,0 C5,10 1,16 5,26 C9,36 1,46 5,56 C9,66 1,72 5,80'/%3E%3Cpath class='wave' stroke-width='1.4' d='M15,0 C15,10 11,16 15,26 C19,36 11,46 15,56 C19,66 11,72 15,80'/%3E%3Cpath class='wave' stroke-width='1.2' d='M25,0 C25,10 21,16 25,26 C29,36 21,46 25,56 C29,66 21,72 25,80'/%3E%3Cpath class='wave' stroke-width='1.2' d='M35,0 C35,10 31,16 35,26 C39,36 31,46 35,56 C39,66 31,72 35,80'/%3E%3Cpath class='wave' stroke-width='1.4' d='M45,0 C45,10 41,16 45,26 C49,36 41,46 45,56 C49,66 41,72 45,80'/%3E%3Cpath class='wave' stroke-width='1.6' d='M55,0 C55,10 51,16 55,26 C59,36 51,46 55,56 C59,66 51,72 55,80'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cstyle%3E.wave%7Bstroke:%231a6f5e;fill:none;opacity:0.5%7D%3C/style%3E%3Cpath class='wave' stroke-width='1.6' d='M5,0 C2,15 3,25 5,40 C7,55 3,65 5,80'/%3E%3Cpath class='wave' stroke-width='1.4' d='M15,0 C12,15 13,25 15,40 C17,55 13,65 15,80'/%3E%3Cpath class='wave' stroke-width='1.2' d='M25,0 C22,15 23,25 25,40 C27,55 23,65 25,80'/%3E%3Cpath class='wave' stroke-width='1.2' d='M35,0 C32,15 33,25 35,40 C37,55 33,65 35,80'/%3E%3Cpath class='wave' stroke-width='1.4' d='M45,0 C42,15 43,25 45,40 C47,55 43,65 45,80'/%3E%3Cpath class='wave' stroke-width='1.6' d='M55,0 C52,15 53,25 55,40 C57,55 53,65 55,80'/%3E%3C/svg%3E"),
     linear-gradient(
       to right,
       #0b6b49 0%,
