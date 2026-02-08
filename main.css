@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 html, body {
-  min-height: 100%;
+  min-height: 200vh; /* ensure enough height for background pattern */
   margin: 0;
   padding: 0;
 }
@@ -146,4 +146,15 @@ p, a {
   text-decoration: none;
   border-radius: 999px;
   transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Footer credit */
+.footer-credit {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  font-family: 'Unbounded', sans-serif;
 }
