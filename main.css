@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 html, body {
   min-height: 200vh; /* ensure enough height for background pattern */
@@ -146,6 +147,24 @@ p, a {
   text-decoration: none;
   border-radius: 999px;
   transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Hidden message */
+.hidden-message {
+  position: fixed;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 3px;
+  transform: translateX(-50%) scaleY(1.4);
+  transform-origin: center;
+  max-width: 90%;
+  white-space: nowrap;
 }
 
 /* Footer credit */
