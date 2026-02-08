@@ -136,56 +136,6 @@ p, a {
   color: #ffffff;
 }
 
-/* Nav item dropdown container */
-.nav-item-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown content */
-.dropdown-content {
-  position: fixed;
-  background-color: #0f7f5a;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 12px;
-  min-width: 300px;
-  min-height: 60px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms ease, visibility 200ms ease;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown-content p {
-  margin: 0;
-  font-size: 13px;
-  font-family: 'Unbounded', sans-serif;
-  line-height: 1.4;
-}
-
-/* Diagonal connector line flipped on x-axis and rotated 90° (pointing left) */
-.dropdown-content::after {
-  content: '';
-  position: absolute;
-  bottom: calc(100% + 28px);
-  left: 12px;
-  width: 2px;
-  height: 14px;
-  background-color: #1a6f5e;
-  transform: scaleX(-1) rotate(90deg);
-  transform-origin: bottom left;
-}
-
-/* Show dropdown on hover */
-.nav-item-dropdown:hover .dropdown-content {
-  opacity: 1;
-  visibility: visible;
-}
-
 /* Slight spacing for nav links and remove separators */
 .site-nav a {
   display: inline-block;
