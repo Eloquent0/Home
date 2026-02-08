@@ -152,7 +152,7 @@ p, a {
 /* Hidden message */
 .hidden-message {
   position: absolute;
-  bottom: 50px;
+  bottom: 150px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 8px;
