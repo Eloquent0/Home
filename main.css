@@ -91,6 +91,7 @@ header {
   /* darker edges blend into the main header color */
   background-color: #0f7f5a; /* fallback */
   background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cstyle%3E.wave%7Bstroke:%231a6f5e;fill:none;opacity:0.5;stroke-linecap:round%7D%3C/style%3E%3Cpath class='wave' stroke-width='1.6' d='M5,0 Q3,10 5,20 T5,40 T5,60 T5,80'/%3E%3Cpath class='wave' stroke-width='1.4' d='M15,0 Q13,10 15,20 T15,40 T15,60 T15,80'/%3E%3Cpath class='wave' stroke-width='1.2' d='M25,0 Q23,10 25,20 T25,40 T25,60 T25,80'/%3E%3Cpath class='wave' stroke-width='1.2' d='M35,0 Q33,10 35,20 T35,40 T35,60 T35,80'/%3E%3Cpath class='wave' stroke-width='1.4' d='M45,0 Q43,10 45,20 T45,40 T45,60 T45,80'/%3E%3Cpath class='wave' stroke-width='1.6' d='M55,0 Q53,10 55,20 T55,40 T55,60 T55,80'/%3E%3C/svg%3E"),
     linear-gradient(
       to right,
       #0b6b49 0%,
