@@ -46,10 +46,10 @@ body {
 
 .shop-oval {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* color, color, color, opacity */
   border-radius: 20px;
   padding: 8px 28px;
   margin-top: 18px;
