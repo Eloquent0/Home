@@ -80,7 +80,17 @@ body {
 
 /* Header bar for a bit of contrast */
 header {
-  background-color: #0f7f5a; /* dark emerald */
+  /* darker edges blend into the main header color */
+  background-color: #0f7f5a; /* fallback */
+  background-image: linear-gradient(
+    to right,
+    #0b6b49 0%,
+    #0b6b49 12%,
+    #0f7f5a 32%,
+    #0f7f5a 68%,
+    #0b6b49 88%,
+    #0b6b49 100%
+  );
   padding: 12px 0;
   margin-bottom: 12px;
 }
@@ -92,7 +102,7 @@ header {
   font-weight: 700;
   margin: 10px 0 30px 0;
   padding: 0;
-  font-family: 'Michroma', 'Unbounded', sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-style: italic;
 }
 
