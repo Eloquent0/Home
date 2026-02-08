@@ -1,5 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap');
+
+:root {
+  /* Emerald palette */
+  --emerald-dark: #0b6b49;
+  --emerald: #0f7f5a;
+  --emerald-mid: #1a9b6f;
+  --emerald-light: #2d9b7a;
+  --text: #ffffff;
+  --grid-line: #1a6f5e; /* thin grid line color */
+  --grid-cell: #2d9b7a; /* grid cell color */
+}
+
+/* Reset / base */
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text);
+  font-family: 'Unbounded', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  /* subtle grid background using repeating gradients */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      var(--grid-line) 0px,
+      var(--grid-line) 1px,
+      var(--grid-cell) 1px,
+      var(--grid-cell) 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--grid-line) 0px,
+      var(--grid-line) 1px,
+      var(--grid-cell) 1px,
+      var(--grid-cell) 20px
+    );
+  background-color: var(--emerald); /* fallback */
+}
+
+/* Header */
+header {
+  /* darker edges blend into the main header color */
+  background-color: var(--emerald);
+  background-image: linear-gradient(
+    to right,
+    var(--emerald-dark) 0%,
+    var(--emerald-dark) 12%,
+    var(--emerald) 32%,
+    var(--emerald) 68%,
+    var(--emerald-dark) 88%,
+    var(--emerald-dark) 100%
+  );
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+
+/* Page title (display) */
+.page-title {
+  font-size: 48px;
+  color: var(--text);
+  font-weight: 700;
+  margin: 10px 0 30px 0;
+  padding: 0;
+  font-family: 'Michroma', 'Unbounded', sans-serif;
+  font-style: italic;
+}
+
+/* Navigation */
+.site-nav {
+  margin-top: 25px;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 8px;
+  background-color: var(--emerald-mid);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  transform: scale(1.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.site-nav a:active {
+  transform: scale(0.98);
+}
+
+/* Oval placeholder (keeps style even if not present in markup) */
+.shop-oval {
+  display: inline-block;
+  border: 2px solid var(--emerald-light);
+  border-radius: 999px;
+  padding: 8px 28px;
+  margin-top: 18px;
+  background-color: rgba(26,155,111,0.12); /* subtle tinted background */
+}
+
+/* Text inside oval: calmer serif that complements Michroma */
+.shop-text {
+  font-size: 20px;
+  color: var(--text);
+  margin: 0;
+  font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+  font-weight: 300;
+}
+
+/* Generic content styles */
+p {
+  color: var(--text);
+  margin: 0 0 16px 0;
+}
+
+/* Utility: make links inherit color unless overridden */
+a {
+  color: inherit;
+}
 
 html, body {
   min-height: 100%;
