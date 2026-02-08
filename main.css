@@ -160,25 +160,24 @@ p, a {
   content: '';
   position: absolute;
   bottom: 100%;
-  left: 50%;
+  left: 12px;
   width: 2px;
   height: 28px;
   background-color: #1a6f5e;
-  transform: translateX(-50%);
   margin-bottom: 0;
 }
 
-/* Diagonal connector line at 135° */
+/* Diagonal connector line flipped on x-axis and rotated 90° (pointing left) */
 .dropdown-content::after {
   content: '';
   position: absolute;
   bottom: calc(100% + 28px);
-  left: 50%;
+  left: 12px;
   width: 2px;
   height: 14px;
   background-color: #1a6f5e;
-  transform: translateX(-50%) rotate(45deg);
-  transform-origin: bottom center;
+  transform: scaleX(-1) rotate(90deg);
+  transform-origin: bottom left;
 }
 
 /* Show dropdown on hover */
