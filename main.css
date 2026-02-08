@@ -82,15 +82,19 @@ body {
 header {
   /* darker edges blend into the main header color */
   background-color: #0f7f5a; /* fallback */
-  background-image: linear-gradient(
-    to right,
-    #0b6b49 0%,
-    #0b6b49 12%,
-    #0f7f5a 32%,
-    #0f7f5a 68%,
-    #0b6b49 88%,
-    #0b6b49 100%
-  );
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80' viewBox='0 0 200 80'%3E%3Cstyle%3E.wave%7Bstroke:%231a6f5e;stroke-width:0.8;fill:none;opacity:0.4%7D%3C/style%3E%3Cpath class='wave' d='M0,10 Q50,5 100,10 T200,10'/%3E%3Cpath class='wave' d='M0,15 Q50,10 100,15 T200,15'/%3E%3Cpath class='wave' d='M0,22 Q50,18 100,22 T200,22'/%3E%3Cpath class='wave' d='M0,30 Q50,26 100,30 T200,30'/%3E%3Cpath class='wave' d='M0,38 Q50,34 100,38 T200,38'/%3E%3Cpath class='wave' d='M0,46 Q50,42 100,46 T200,46'/%3E%3Cpath class='wave' d='M0,54 Q50,50 100,54 T200,54'/%3E%3Cpath class='wave' d='M0,62 Q50,58 100,62 T200,62'/%3E%3Cpath class='wave' d='M0,70 Q50,66 100,70 T200,70'/%3E%3C/svg%3E"),
+    linear-gradient(
+      to right,
+      #0b6b49 0%,
+      #0b6b49 12%,
+      #0f7f5a 32%,
+      #0f7f5a 68%,
+      #0b6b49 88%,
+      #0b6b49 100%
+    );
+  background-size: 200px 80px, 100% 100%;
+  background-position: 0 0, 0 0;
   padding: 12px 0;
   margin-bottom: 12px;
 }
