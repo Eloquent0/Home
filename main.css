@@ -155,7 +155,7 @@ p, a {
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 28px;
+  font-size: 8px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.25);
   text-align: center;
