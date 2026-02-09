@@ -6,6 +6,7 @@ html, body {
   min-height: 200vh; /* ensure enough height for background pattern */
   margin: 0;
   padding: 0;
+  background-color: #0f7f5a; /* keep a solid fallback so rapid scrolls don't reveal white */
 }
 
 body {
@@ -28,6 +29,8 @@ body {
       #2d9b7a 1px,
       #2d9b7a 20px
     );
+    background-attachment: fixed; /* pin background to viewport to avoid white gaps during fast scroll */
+    background-repeat: repeat;
 }
 
 /* Site title styling */
@@ -151,20 +154,42 @@ p, a {
 
 /* Hidden message */
 .hidden-message {
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
+  display: block;
+  margin: 0 auto 8px;
   font-size: 28px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.25);
   text-align: center;
   font-family: 'Space Mono', monospace;
   letter-spacing: 3px;
-  transform: translateX(-50%) scaleY(1.4);
+  transform: scaleY(1.4);
   transform-origin: center;
   max-width: 90%;
   white-space: nowrap;
 }
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 120ms ease;
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+#backToTop.show { opacity: 1; pointer-events: auto; }
+#backToTop:active { transform: scale(0.96); }
 
 /* Footer credit */
 .footer-credit {
