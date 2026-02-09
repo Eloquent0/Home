@@ -9,16 +9,6 @@ body {
   margin: 40px 0;
   letter-spacing: 4px;
 }
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #111;
-  font-family: Arial, sans-serif;
-  color: white;
-}
 
 .slot-machine {
   text-align: center;
