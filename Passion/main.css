@@ -63,3 +63,29 @@ body {
   font-family: 'Coffee At Midnight', cursive;
   line-height: 1.8;
 }
+
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.home-link {
+  color: rgb(254, 0, 0);
+  font-family: 'Coffee At Midnight', cursive;
+  font-size: 3rem;
+  text-decoration: none;
+  -webkit-text-stroke: 2px rgb(158, 36, 36);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 4px;
+  transition: transform 0.2s ease;
+}
+
+.home-link:hover {
+  transform: scale(1.1);
+}
