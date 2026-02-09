@@ -62,6 +62,42 @@ body {
   min-width: 500px;
   font-family: Arial, sans-serif;
   line-height: 1.8;
+  position: relative;
+}
+
+/* Velvet Rope Divider */
+.poker-table::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background: linear-gradient(180deg, 
+    transparent 0%,
+    #8B0000 20%,
+    #DC143C 40%,
+    #8B0000 60%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(139, 0, 0, 0.6);
+}
+
+/* Rope Posts */
+.poker-table::before {
+  content: '🔴';
+  position: absolute;
+  bottom: -45px;
+  left: 10%;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.poker-tables-container .poker-table:last-child::after,
+.poker-tables-container .poker-table:last-child::before {
+  display: none;
 }
 
 .bottom-nav {
