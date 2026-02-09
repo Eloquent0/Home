@@ -109,6 +109,8 @@ header {
     );
   background-size: 60px 80px, 100% 100%;
   background-position: 0 0, 0 0;
+  background-attachment: fixed, scroll; /* keep SVG pattern fixed to viewport */
+  background-repeat: repeat, no-repeat;
   padding: 12px 0;
   margin-bottom: 12px;
 }
