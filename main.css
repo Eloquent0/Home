@@ -152,10 +152,9 @@ p, a {
 /* Hidden message */
 .hidden-message {
   position: absolute;
-  bottom: 150px;
+  bottom: 5px;
   left: 50%;
-  transform: translateX(-50%);
-  font-size: 8px;
+  font-size: 28px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.25);
   text-align: center;
