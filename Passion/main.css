@@ -2,7 +2,7 @@ body {
   background: url("7456.jpg") repeat;
 }
 .page-title {
-  color: brown;
+  color: rgb(254, 0, 0);
   font-family: 'Coffee At Midnight', cursive;
   font-size: 5rem;          /* BIG title */
   text-align: center;       /* center aligned */
