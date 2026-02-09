@@ -2,7 +2,7 @@ body {
   background: url("7456.jpg") repeat;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 300vh;
 }
 .page-title {
   color: rgb(254, 0, 0);
@@ -39,4 +39,27 @@ body {
 .section p {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.poker-tables-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 40px;
+}
+
+.poker-table {
+  background: linear-gradient(135deg, #0f5132 0%, #1a7f4f 100%);
+  border: 8px solid #d4af37;
+  border-radius: 20px;
+  padding: 60px 80px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  min-width: 500px;
+  font-family: 'Coffee At Midnight', cursive;
+  line-height: 1.8;
 }
