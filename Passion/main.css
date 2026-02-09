@@ -1,3 +1,10 @@
 body {
   background: url("7456.jpg") repeat;
 }
+.page-title {
+  font-family: 'Coffee At Midnight', cursive;
+  font-size: 5rem;          /* BIG title */
+  text-align: center;       /* center aligned */
+  margin: 40px 0;
+  letter-spacing: 4px;
+}
