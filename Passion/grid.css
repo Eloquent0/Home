@@ -1,0 +1,42 @@
+/* Calculator-style grid background */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color: #1f1f1f; /* dark calculator base */
+  /* thin subtle grid lines */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 56px 56px, 56px 56px; /* size of each 'button' cell */
+  background-position: -2px -2px, -2px -2px;
+  color: #eee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Optional: a subtle inset to suggest a screen or panel */
+.screen-panel {
+  max-width: 740px;
+  margin: 48px auto;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.6);
+}
+
+/* To make each cell feel like a button, you can use this when creating button elements */
+.calc-button {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.5);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* Tweak for high-DPI or different button spacing: override background-size */
+@media (max-width: 600px) {
+  body { background-size: 40px 40px, 40px 40px; }
+}
