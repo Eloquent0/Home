@@ -9,13 +9,7 @@ html, body {
   background-color: #2d9b7a; /* lighter grid cell color as fallback for fast scroll */
 }
 
-body {
-  color: white;
-  font-family: 'Unbounded', sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
+html {
   background-image: 
     repeating-linear-gradient(
       0deg,
@@ -31,15 +25,17 @@ body {
       #2d9b7a 1px,
       #2d9b7a 20px
     );
-    background-attachment: fixed; /* pin background to viewport to avoid white gaps during fast scroll */
-    background-repeat: repeat;
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
-/* Site title styling */
-.site-title {
-  color: #ffffff;
-  font-weight: 700;
-  margin: 0;
+body {
+  color: white;
+  font-family: 'Unbounded', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
   padding-top: 10px;
 }
 
