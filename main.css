@@ -6,7 +6,7 @@ html, body {
   min-height: 200vh; /* ensure enough height for background pattern */
   margin: 0;
   padding: 0;
-  background-color: #0f7f5a; /* keep a solid fallback so rapid scrolls don't reveal white */
+  background-color: #2d9b7a; /* lighter grid cell color as fallback for fast scroll */
 }
 
 body {
@@ -14,6 +14,8 @@ body {
   font-family: 'Unbounded', sans-serif;
   text-align: center;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
   background-image: 
     repeating-linear-gradient(
       0deg,
@@ -155,7 +157,8 @@ p, a {
 /* Hidden message */
 .hidden-message {
   display: block;
-  margin: 0 auto 8px;
+  margin-top: auto;
+  margin-bottom: 8px;
   font-size: 28px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.25);
