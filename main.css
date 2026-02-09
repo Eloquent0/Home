@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 html, body {
-  min-height: 200vh; /* ensure enough height for background pattern */
+  min-height: 400vh; /* ensure enough height for background pattern */
   margin: 0;
   padding: 0;
   background-color: #2d9b7a; /* lighter grid cell color as fallback for fast scroll */
@@ -174,7 +174,7 @@ p, a {
   display: block;
   margin-top: auto;
   margin-bottom: 8px;
-  font-size: 28px;
+  font-size: 16px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.25);
   text-align: center;
