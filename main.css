@@ -37,6 +37,23 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      #1a6f5e 0px,
+      #1a6f5e 1px,
+      #2d9b7a 1px,
+      #2d9b7a 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #1a6f5e 0px,
+      #1a6f5e 1px,
+      #2d9b7a 1px,
+      #2d9b7a 20px
+    );
+  background-attachment: scroll, scroll;
+  background-repeat: repeat;
 }
 
 /* Shop label and oval container */
