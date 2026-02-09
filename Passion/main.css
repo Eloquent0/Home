@@ -11,6 +11,8 @@ body {
   text-align: center;       /* center aligned */
   margin: 40px 0;
   letter-spacing: 4px;
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
 }
 
 .content {
