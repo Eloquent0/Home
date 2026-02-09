@@ -55,12 +55,12 @@ body {
   border-radius: 20px;
   padding: 60px 80px;
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: normal;
   color: #d4af37;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   min-width: 500px;
-  font-family: 'Coffee At Midnight', cursive;
+  font-family: Arial, sans-serif;
   line-height: 1.8;
 }
 
