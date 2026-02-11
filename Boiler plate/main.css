@@ -1,9 +1,9 @@
 .contentbox {
+    background-color: tomato;
     width: 200px;
     height: 200px;
     padding: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: tomato;
 }
