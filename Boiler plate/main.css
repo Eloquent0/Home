@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 .content-box {
     background-color: tomato;
     width: 200px;
