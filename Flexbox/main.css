@@ -4,8 +4,23 @@
 
 .block {
   background-color: darkkhaki;
+  padding: 10px;
+  margin: 10px;
 }
 
 .inline {
   background-color: aquamarine;
+  width: 90px;
+  height: 100px;
+  padding: 10px;
+  margin: 30px;
+  display: inline-block;
+}
+
+.container {
+  background-color: cornflowerblue;
+}
+
+.item {
+  background-color: lightblue;
 }
