@@ -1,26 +1,105 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Flexbox Exercise</title>
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <div class="block">block</div>
-    <div class="block">block</div>
-    <div class="block">block</div>
+    body {
+      font-family: serif;
+      background: #fff;
+    }
 
-    <span class="inline">inline</span>
-    <span class="inline">inline</span>
-    <span class="inline">inline</span>
+    /* Section 1: Block elements (stacked vertically) */
+    .block-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 6px;
+      background: #fff;
+    }
 
-    <div class="container">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-      <div class="item">4</div>
-      <div class="item">5</div>
-    </div>
+    .block-item {
+      background: #b5a75a;
+      padding: 10px 14px;
+      width: 100%;
+    }
 
-  </body>
+    /* Section 2: Inline elements (row, no stretch) */
+    .inline-container {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 20px 10px;
+      background: #fff;
+      align-items: flex-start;
+    }
+
+    .inline-item {
+      background: #5fffc0;
+      width: 110px;
+      height: 110px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    /* Section 3: Large blue flex container with wrapped children */
+    .flex-wrap-container {
+      display: flex;
+      flex-wrap: wrap;
+      background: #6b8fd4;
+      padding: 20px;
+      gap: 0;
+      min-height: 500px;
+      align-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .flex-wrap-container .flex-item {
+      background: #d0dce8;
+      border: 1px solid #9ab;
+      padding: 10px 14px;
+      width: 110px;
+      flex-shrink: 0;
+    }
+
+    /* Item 5 wraps to next row, offset to start at position 2 */
+    .flex-wrap-container .flex-item:nth-child(5) {
+      margin-left: 110px; /* push to column 2 position */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Block elements -->
+  <div class="block-container">
+    <div class="block-item">block</div>
+    <div class="block-item">block</div>
+    <div class="block-item">block</div>
+  </div>
+
+  <!-- Inline elements -->
+  <div class="inline-container">
+    <div class="inline-item">inline</div>
+    <div class="inline-item">inline</div>
+    <div class="inline-item">inline</div>
+  </div>
+
+  <!-- Large blue flex-wrap section -->
+  <div class="flex-wrap-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+  </div>
+
+</body>
 </html>
