@@ -5,22 +5,35 @@
 .block {
   background-color: darkkhaki;
   padding: 10px;
-  margin: 10px;
+  margin: 6px;
 }
 
 .inline {
   background-color: aquamarine;
-  width: 90px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   padding: 10px;
-  margin: 30px;
+  margin: 20px 40px;
   display: inline-block;
+  vertical-align: top;
 }
 
 .container {
   background-color: cornflowerblue;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 500px;
+  align-content: flex-end;
+  padding: 10px;
 }
 
 .item {
   background-color: lightblue;
+  border: 1px solid #9ab;
+  padding: 10px;
+  width: 110px;
+}
+
+.item:nth-child(5) {
+  margin-left: 110px;
 }
