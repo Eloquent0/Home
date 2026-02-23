@@ -6,3 +6,18 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+.dot {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .dot:hover {
+      background-color: darkred;
+      cursor: pointer;
+    }
