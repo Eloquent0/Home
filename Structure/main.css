@@ -1,5 +1,5 @@
 body {
-      background-image: url('visitor center.jpeg');
+      background-image: url('visitor\ center.jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -10,7 +10,7 @@ body {
     .dot {
       position: absolute;
       top: 55%;   
-      left: 30%;     
+      left: 50%;     
       width: 20px;
       height: 20px;
       background-color: red;

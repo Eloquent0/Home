@@ -1,15 +1,16 @@
 body {
-      background-image: url('Inside_Center.jpg'); /* swap with your image filename */
+      background-image: url('JewelCave2.webp'); /* swap with your image filename */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       min-height: 100vh;
       margin: 0;
     }
+
     .dot {
       position: absolute;
-      top: 55%;   
-      left: 20;     
+      top: 68%;   
+      left: 30%;     
       width: 20px;
       height: 20px;
       background-color: red;

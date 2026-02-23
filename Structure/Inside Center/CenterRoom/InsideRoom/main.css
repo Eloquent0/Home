@@ -1,0 +1,23 @@
+body {
+  background-image: url('Jewel_Cave.webp'); /* swap with your image filename */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+}
+ .dot {
+      position: absolute;
+      top: 55%;   
+      left: 20%;     
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .dot:hover {
+      background-color: darkred;
+      cursor: pointer;
+    }
