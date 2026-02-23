@@ -9,7 +9,7 @@ body {
     .dot {
       position: absolute;
       top: 55%;   
-      left: 20;     
+      left: 30;     
       width: 20px;
       height: 20px;
       background-color: red;
