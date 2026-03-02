@@ -2,108 +2,65 @@
     box-sizing: border-box;
 }
 
-.box {
-    background-color: lightgray;
-    width: 200px;
-    height: 200px;
-    
-    /* animation-name: test;
-    animation-duration: 4s;
-    animation-delay: 2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    animation-fill-mode: both; */
-    
-    animation: test 4s 2s infinite linear alternate both;
+body {
+    margin: 0;
 }
 
-/* in the animation shorthand property, the first time value
-   corresponds with animation duration, and the second time
-   value corresponds with the delay */
+.container {
+    background-color: lightpink;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.circle {
+    background-color: lightgray;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    animation: pulse 2s infinite ease-in-out alternate;
+}
+
+.square {
+    background-color: cadetblue;
+    width: 200px;
+    height: 200px;
+    animation: spin 3s infinite linear;
+}
 
 @keyframes test {
     0% {
         background-color: red;
-        height: 200px;
+    }
+    
+    50% {
+        background-color: blue;
     }
     
     100% {
         background-color: yellow;
-        height: 400px;
     }
 }
 
-@keyframes test {
+@keyframes pulse {
     0% {
-        background-color: blue;
-        height: 200px;
+        background: lightgray;
+        scale: 1;
     }
     
     100% {
-        background-color: violet;
-        height: 400px;
+        background: yellow;
+        scale: 1.4;
     }
 }
 
-body {
-    margin: 0;
-}
-
-.container {
-    background-color: pink;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.circle {
-    background-color: paleturquoise;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-}
-
-.square {
-    background-color: lightsteelblue;
-    width: 100px;
-    height: 100px;
-}
-
-@keyframes test {
+@keyframes spin {
     0% {
-        background-color: blue;
-        height: 200px;
+        rotate:0deg;
     }
     
     100% {
-        background-color: violet;
-        height: 400px;
+        rotate: 360deg;
     }
-}
-
-body {
-    margin: 0;
-}
-
-.container {
-    background-color: pink;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.circle {
-    background-color: paleturquoise;
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-}
-
-.square {
-    background-color: lightsteelblue;
-    width: 100px;
-    height: 100px;
 }
