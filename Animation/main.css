@@ -1,90 +1,109 @@
-/* Box sizing examples */
-
-.content-box {
-    border: 5px solid darkslategray;
-    margin: 50px;
-}
-
-.border-box {
-    border: 5px solid darkslategray;
-    margin: 50px;
+* {
     box-sizing: border-box;
 }
 
-/* Container for absolute positioning */
-
-.container {
-    background-color: burlywood;
-    width: 300px;
-    height: 300px;
-    position: relative;
-    left: 90px;
-}
-
-/* Base box styling */
-
 .box {
-    background-color: bisque;
-    width: 100px;
-    height: 100px;
-    margin: 20px 0;
-    border: 2px solid darkolivegreen;
-    padding: 5px;
-}
-
-/* Relative positioning */
-
-.relative {
-    background-color: cadetblue;
-    position: relative;
-    top: 50px;
-    left: 50px;
-}
-
-/* Fixed positioning */
-
-.fixed {
-    background-color: chartreuse;
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 0;
-}
-
-/* Absolute positioning */
-
-.absolute {
-    background-color: darkorange;
-    position: absolute;
-    top: 0;
-    right: -100px;
-    margin: 0;
-}
-
-/* Simple smiley example */
-
-.smiley {
+    background-color: lightgray;
     width: 200px;
     height: 200px;
-    background-color: gold;
-    border-radius: 50%;
-    position: relative;
-    margin: 50px;
+    
+    /* animation-name: test;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-fill-mode: both; */
+    
+    animation: test 4s 2s infinite linear alternate both;
 }
 
-.eye {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
-    position: absolute;
-    top: 60px;
+/* in the animation shorthand property, the first time value
+   corresponds with animation duration, and the second time
+   value corresponds with the delay */
+
+@keyframes test {
+    0% {
+        background-color: red;
+        height: 200px;
+    }
+    
+    100% {
+        background-color: yellow;
+        height: 400px;
+    }
 }
 
-.eye.left {
-    left: 50px;
+@keyframes test {
+    0% {
+        background-color: blue;
+        height: 200px;
+    }
+    
+    100% {
+        background-color: violet;
+        height: 400px;
+    }
 }
 
-.eye.right {
-    right: 50px;
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: pink;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.circle {
+    background-color: paleturquoise;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.square {
+    background-color: lightsteelblue;
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes test {
+    0% {
+        background-color: blue;
+        height: 200px;
+    }
+    
+    100% {
+        background-color: violet;
+        height: 400px;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background-color: pink;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.circle {
+    background-color: paleturquoise;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.square {
+    background-color: lightsteelblue;
+    width: 100px;
+    height: 100px;
 }
