@@ -54,7 +54,7 @@ body {
 }
 
 .ball-4 {
-    background-image: url('Ball5.png');
+    background-image: url('Ball4.png');
     animation: orbit4 10s infinite linear;
 }
 
