@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.ball-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.ball-1 {
+    background-image: url('Ball1.png');
+    animation: orbit1 10s infinite linear;
+}
+
+.ball-2 {
+    background-image: url('Ball2.png');
+    animation: orbit2 10s infinite linear;
+}
+
+.ball-3 {
+    background-image: url('Ball3.png');
+    animation: orbit3 10s infinite linear;
+}
+
+.ball-4 {
+    background-image: url('Ball4.png');
+    animation: orbit4 10s infinite linear;
+}
+
+.ball-5 {
+    background-image: url('Ball5.png');
+    animation: orbit5 10s infinite linear;
+}
+
+.ball-6 {
+    background-image: url('Ball6.png');
+    animation: orbit6 10s infinite linear;
+}
+
+.ball-7 {
+    background-image: url('Ball7.png');
+    animation: orbit7 10s infinite linear;
+}
+
+.ball-8 {
+    background-image: url('Ball8.png');
+    animation: orbit8 10s infinite linear;
+}
+
+.ball-9 {
+    background-image: url('Ball9.png');
+    animation: orbit9 10s infinite linear;
+}
+
+.ball-10 {
+    background-image: url('Ball10.png');
+    animation: orbit10 10s infinite linear;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(255, 255, 255, 0.9);
+        scale: 1;
+    }
+    
+    50% {
+        background-color: white;
+        scale: 1.4;
+    }
+    
+    100% {
+        background-color: rgba(255, 255, 255, 0.9);
+        scale: 1;
+    }
+}
+
+@keyframes orbit1 {
+    0% { top: 5%; left: 5%; }
+    25% { top: 5%; left: 95%; }
+    50% { top: 95%; left: 95%; }
+    75% { top: 95%; left: 5%; }
+    100% { top: 5%; left: 5%; }
+}
+
+@keyframes orbit2 {
+    0% { top: 15%; left: 20%; }
+    25% { top: 15%; left: 80%; }
+    50% { top: 85%; left: 80%; }
+    75% { top: 85%; left: 20%; }
+    100% { top: 15%; left: 20%; }
+}
+
+@keyframes orbit3 {
+    0% { top: 5%; left: 50%; }
+    25% { top: 50%; left: 95%; }
+    50% { top: 95%; left: 50%; }
+    75% { top: 50%; left: 5%; }
+    100% { top: 5%; left: 50%; }
+}
+
+@keyframes orbit4 {
+    0% { top: 25%; left: 10%; }
+    25% { top: 10%; left: 75%; }
+    50% { top: 75%; left: 90%; }
+    75% { top: 90%; left: 25%; }
+    100% { top: 25%; left: 10%; }
+}
+
+@keyframes orbit5 {
+    0% { top: 50%; left: 10%; }
+    25% { top: 25%; left: 80%; }
+    50% { top: 50%; left: 90%; }
+    75% { top: 75%; left: 20%; }
+    100% { top: 50%; left: 10%; }
+}
+
+@keyframes orbit6 {
+    0% { top: 10%; left: 25%; }
+    25% { top: 25%; left: 85%; }
+    50% { top: 90%; left: 75%; }
+    75% { top: 75%; left: 15%; }
+    100% { top: 10%; left: 25%; }
+}
+
+@keyframes orbit7 {
+    0% { top: 35%; left: 5%; }
+    25% { top: 10%; left: 70%; }
+    50% { top: 65%; left: 95%; }
+    75% { top: 90%; left: 30%; }
+    100% { top: 35%; left: 5%; }
+}
+
+@keyframes orbit8 {
+    0% { top: 20%; left: 40%; }
+    25% { top: 40%; left: 90%; }
+    50% { top: 80%; left: 60%; }
+    75% { top: 60%; left: 10%; }
+    100% { top: 20%; left: 40%; }
+}
+
+@keyframes orbit9 {
+    0% { top: 45%; left: 50%; }
+    25% { top: 15%; left: 85%; }
+    50% { top: 55%; left: 95%; }
+    75% { top: 85%; left: 15%; }
+    100% { top: 45%; left: 50%; }
+}
+
+@keyframes orbit10 {
+    0% { top: 60%; left: 20%; }
+    25% { top: 30%; left: 75%; }
+    50% { top: 40%; left: 90%; }
+    75% { top: 80%; left: 25%; }
+    100% { top: 60%; left: 20%; }
+}
