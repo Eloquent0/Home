@@ -10,7 +10,10 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-color: #000;
+    background-image: url('PokemonBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .ball-container {
@@ -18,12 +21,13 @@ body {
     height: 60px;
     border-radius: 50%;
     position: absolute;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .ball {
@@ -50,7 +54,7 @@ body {
 }
 
 .ball-4 {
-    background-image: url('Ball4.png');
+    background-image: url('Ball5.png');
     animation: orbit4 10s infinite linear;
 }
 
@@ -86,17 +90,17 @@ body {
 
 @keyframes pulse {
     0% {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.35);
         scale: 1;
     }
     
     50% {
-        background-color: white;
-        scale: 1.4;
+        background-color: rgba(255, 255, 255, 0.75);
+        scale: 1.25;
     }
     
     100% {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.35);
         scale: 1;
     }
 }
