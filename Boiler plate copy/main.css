@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #e7e5d6;
+    margin: 0;
+  transition: background-color .25s ease;
+}
+
+body.dark {
+    background: #888675;
+}
+
+body.glow {
+  background: #fff8c9;
+}
+
+body.glow .menu,
+body.glow .gear,
+body.glow .toggle-btn,
+body.glow .glow-btn {
+  box-shadow: 0 0 18px rgba(255, 245, 120, 0.9);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+}
+
+.toggle-btn {
+  margin: 0;
+}
+
+.glow-btn {
+  margin: 0;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: lightblue;
+  font-size: 150%;
+  opacity: 0;
+
+  padding: 20px;
+  text-align: center;
+  
+  transition: right .3s, opacity .3s .1s;
+}
+
+.menu.active {
+  right: 0;
+  opacity: 1;
+}
+
+.gear {
+  background: lightblue;
+  border: 1px solid #7aa4b0;
+  border-radius: 0;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+
+  transition: transform .3s ease;
+}
+
+.gear.spin {
+  transform: rotate(180deg);
+}
