@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: lightgreen;
+}
+
+div {
+    background: lightblue;
+    border: 1px solid;
+    padding: 20px;
+
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* min-width = mobile-first */
+/* for mobile-first, we want our media
+queries to increase in pixel size as we
+move down our css document */
+
+/* max-width = desktop-first */
+/* for desktop-first, we want our media
+queries to decrease in pixel size as we
+move down our css document */
+
+@media screen and (min-width:1000px){
+    body {
+        background: lightgray;
+    }
+
+    div {
+        background: lightpink;
+    }
+}
+
+@media screen and (min-width:800px){
+    body {
+        background: lightslategray;
+    }
+
+    div {
+        background: lightgoldenrodyellow;
+    }
+}
