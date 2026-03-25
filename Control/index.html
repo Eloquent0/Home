@@ -14,53 +14,33 @@
 <canvas id="canvas"></canvas>
 <div id="flash"></div>
 
-<!-- EMPTY STATE -->
-<div id="empty-state">
-  <div class="empty-ring">
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <rect x="4" y="4" width="20" height="20" rx="2" stroke="white" stroke-width="1"/>
-      <circle cx="10" cy="10" r="2" fill="white"/>
-      <path d="M4 18l6-5 5 4 4-4 5 5" stroke="white" stroke-width="1"/>
-    </svg>
-  </div>
-  <div class="empty-label">Load an image to begin</div>
+<div id="empty">
+  <img src="Untitled-12.png" alt="Load an image" class="empty-image" />
 </div>
 
-<!-- UI -->
 <div id="ui">
   <label for="file-input" class="btn-ui" id="load-btn">
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-      <rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1"/>
-      <circle cx="4" cy="4" r="1" fill="currentColor"/>
-      <path d="M1 8l3-3 2.5 2.5 2-2 2.5 2.5" stroke="currentColor" stroke-width="1"/>
-    </svg>
     Load Image
   </label>
   <input type="file" id="file-input" accept="image/*">
 
   <button class="btn-ui" id="restart-btn">
     Reset
-    <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-      <path d="M9 5.5A3.5 3.5 0 1 1 5.5 2H7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-      <path d="M6 0.5L8 2L6 3.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
   </button>
 </div>
 
-<!-- EFFECT LABEL -->
-<div id="effect-label"></div>
 
-<!-- KEY HINTS -->
 <div id="key-hints">
-  <div class="hint-row"><span class="hint-text">Invert</span><span class="key-badge" data-key="1">1</span></div>
-  <div class="hint-row"><span class="hint-text">Glitch</span><span class="key-badge" data-key="2">2</span></div>
-  <div class="hint-row"><span class="hint-text">Pixelate</span><span class="key-badge" data-key="3">3</span></div>
-  <div class="hint-row"><span class="hint-text">Duotone</span><span class="key-badge" data-key="4">4</span></div>
-  <div class="hint-row"><span class="hint-text">Mirror</span><span class="key-badge" data-key="5">5</span></div>
-  <div class="hint-row"><span class="hint-text">Blur</span><span class="key-badge" data-key="6">6</span></div>
-  <div class="hint-row"><span class="hint-text">Scanlines</span><span class="key-badge" data-key="7">7</span></div>
-  <div class="hint-row"><span class="hint-text">Channels</span><span class="key-badge" data-key="8">8</span></div>
-  <div class="hint-row"><span class="hint-text">Mosaic</span><span class="key-badge" data-key="9">9</span></div>
+  <div class="hint-row"><span class="hint-text">
+</span><span class="key-badge" data-key="1"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="2"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="3"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="4"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="5"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="6"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="7"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="8"></span></div>
+  <div class="hint-row"><span class="hint-text"></span><span class="key-badge" data-key="9"></span></div>
 </div>
 
 <script src="script.js"></script>
