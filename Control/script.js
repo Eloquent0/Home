@@ -1,50 +1,37 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const fileInput = document.getElementById('file-input');
-const restartBtn = document.getElementById('restart-btn');
-const effectLabel = document.getElementById('effect-label');
-const keyHints = document.getElementById('key-hints');
-const emptyState = document.getElementById('empty-state');
-const flash = document.getElementById('flash');
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var fileInput = document.getElementById('file-input');
+var restartBtn = document.getElementById('restart-btn');
+var keyHints = document.getElementById('key-hints');
+var emptyDiv = document.getElementById('empty');
 
-let sourceImage = null;
-let activeEffects = new Set();
-let labelTimeout = null;
-let renderScheduled = false;
+var myImage = null;
+var activeEffects = [];
 
-const EFFECTS = {
-  '1': { name: 'Invert',     fn: fxInvert },
-  '2': { name: 'Glitch',     fn: fxGlitch },
-  '3': { name: 'Pixelate',   fn: fxPixelate },
-  '4': { name: 'Duotone',    fn: fxDuotone },
-  '5': { name: 'Mirror',     fn: fxMirror },
-  '6': { name: 'Blur',       fn: fxBlur },
-  '7': { name: 'Scanlines',  fn: fxScanlines },
-  '8': { name: 'Channels',   fn: fxChannels },
-  '9': { name: 'Mosaic',     fn: fxMosaic },
-};
-
-function resize() {
+// make canvas fill the screen
+function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  if (sourceImage) render();
+  if (myImage) drawImage();
 }
-window.addEventListener('resize', resize);
-resize();
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
-fileInput.addEventListener('change', e => {
-  const file = e.target.files[0];
+// load image from file picker
+fileInput.addEventListener('change', function(e) {
+  var file = e.target.files[0];
   if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    const img = new Image();
-    img.onload = () => {
-      sourceImage = img;
-      activeEffects.clear();
-      updateKeyBadges();
-      emptyState.classList.add('hidden');
+
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var img = new Image();
+    img.onload = function() {
+      myImage = img;
+      activeEffects = [];
+      updateBadges();
+      emptyDiv.classList.add('hidden');
       keyHints.classList.add('show');
-      render();
+      drawImage();
     };
     img.src = ev.target.result;
   };
@@ -52,225 +39,177 @@ fileInput.addEventListener('change', e => {
   fileInput.value = '';
 });
 
-restartBtn.addEventListener('click', () => {
-  sourceImage = null;
-  activeEffects.clear();
+// reset button
+restartBtn.addEventListener('click', function() {
+  activeEffects = [];
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  emptyState.classList.remove('hidden');
+  emptyDiv.classList.remove('hidden');
   keyHints.classList.remove('show');
-  updateKeyBadges();
-  showLabel('—');
+  updateBadges();
 });
 
-document.addEventListener('keydown', e => {
-  const k = e.key;
-  if (!EFFECTS[k]) return;
-  if (!sourceImage) return;
+// number keys 1-9 toggle effects
+document.addEventListener('keydown', function(e) {
+  if (!myImage) return;
+  var key = e.key;
+  if (!['1','2','3','4','5','6','7','8','9'].includes(key)) return;
 
-  if (activeEffects.has(k)) {
-    activeEffects.delete(k);
-    showLabel(`${EFFECTS[k].name} off`);
+  if (activeEffects.includes(key)) {
+    activeEffects.splice(activeEffects.indexOf(key), 1);
   } else {
-    activeEffects.add(k);
-    showLabel(`${EFFECTS[k].name}`);
+    activeEffects.push(key);
   }
-  updateKeyBadges();
-  scheduleRender();
-  flashKey(k);
+
+  updateBadges();
+  drawImage();
 });
 
-function scheduleRender() {
-  if (!renderScheduled) {
-    renderScheduled = true;
-    requestAnimationFrame(() => { renderScheduled = false; render(); });
-  }
-}
+// draw image cover-fit then apply effects
+function drawImage() {
+  if (!myImage) return;
 
-function render() {
-  if (!sourceImage) return;
-  const W = canvas.width, H = canvas.height;
+  var W = canvas.width;
+  var H = canvas.height;
+
+  // cover fit
+  var scale = Math.max(W / myImage.width, H / myImage.height);
+  var drawW = myImage.width * scale;
+  var drawH = myImage.height * scale;
+  var drawX = (W - drawW) / 2;
+  var drawY = (H - drawH) / 2;
+
+  // draw to offscreen canvas first
+  var off = document.createElement('canvas');
+  off.width = W;
+  off.height = H;
+  var octx = off.getContext('2d');
+  octx.drawImage(myImage, drawX, drawY, drawW, drawH);
+
+  // apply effects in order
+  if (activeEffects.includes('1')) effect1_invert(octx, W, H);
+  if (activeEffects.includes('2')) effect2_grayscale(octx, W, H);
+  if (activeEffects.includes('3')) effect3_pixelate(octx, W, H);
+  if (activeEffects.includes('4')) effect4_flip(octx, W, H);
+  if (activeEffects.includes('5')) effect5_mirror(octx, W, H);
+  if (activeEffects.includes('6')) effect6_blur(octx, W, H);
+  if (activeEffects.includes('7')) effect7_scanlines(octx, W, H);
+  if (activeEffects.includes('8')) effect8_brightness(octx, W, H);
+  if (activeEffects.includes('9')) effect9_red(octx, W, H);
+
   ctx.clearRect(0, 0, W, H);
-
-  const scale = Math.max(W / sourceImage.width, H / sourceImage.height);
-  const sw = sourceImage.width * scale;
-  const sh = sourceImage.height * scale;
-  const sx = (W - sw) / 2;
-  const sy = (H - sh) / 2;
-
-  const off = document.createElement('canvas');
-  off.width = W; off.height = H;
-  const octx = off.getContext('2d');
-  octx.drawImage(sourceImage, sx, sy, sw, sh);
-
-  const order = ['6','3','9','5','4','1','8','2','7'];
-  for (const k of order) {
-    if (activeEffects.has(k)) {
-      EFFECTS[k].fn(octx, W, H);
-    }
-  }
-
   ctx.drawImage(off, 0, 0);
 }
 
+// ---- EFFECTS ----
 
-function fxInvert(ctx, W, H) {
-  const id = ctx.getImageData(0, 0, W, H);
-  const d = id.data;
-  for (let i = 0; i < d.length; i += 4) {
-    d[i]   = 255 - d[i];
-    d[i+1] = 255 - d[i+1];
-    d[i+2] = 255 - d[i+2];
+// 1 - invert all colors
+function effect1_invert(octx, W, H) {
+  var data = octx.getImageData(0, 0, W, H);
+  var p = data.data;
+  for (var i = 0; i < p.length; i += 4) {
+    p[i]     = 255 - p[i];
+    p[i + 1] = 255 - p[i + 1];
+    p[i + 2] = 255 - p[i + 2];
   }
-  ctx.putImageData(id, 0, 0);
+  octx.putImageData(data, 0, 0);
 }
 
-function fxGlitch(ctx, W, H) {
-  const slices = 18 + Math.floor(Math.random() * 14);
-  for (let i = 0; i < slices; i++) {
-    const y = Math.floor(Math.random() * H);
-    const h = 2 + Math.floor(Math.random() * 22);
-    const shift = (Math.random() - 0.5) * 80;
-    const id = ctx.getImageData(0, y, W, h);
-    const shifted = ctx.getImageData(Math.max(0, shift), y, W, h);
-    ctx.putImageData(id, shift, y);
-    const stripe = ctx.getImageData(0, y, W, h);
-    ctx.putImageData(stripe, shift * 0.5, y);
+// 2 - grayscale
+function effect2_grayscale(octx, W, H) {
+  var data = octx.getImageData(0, 0, W, H);
+  var p = data.data;
+  for (var i = 0; i < p.length; i += 4) {
+    var avg = (p[i] + p[i + 1] + p[i + 2]) / 3;
+    p[i]     = avg;
+    p[i + 1] = avg;
+    p[i + 2] = avg;
   }
+  octx.putImageData(data, 0, 0);
 }
 
-function fxPixelate(ctx, W, H) {
-  const size = 18;
-  for (let y = 0; y < H; y += size) {
-    for (let x = 0; x < W; x += size) {
-      const bw = Math.min(size, W - x);
-      const bh = Math.min(size, H - y);
-      const id = ctx.getImageData(x + Math.floor(bw/2), y + Math.floor(bh/2), 1, 1);
-      ctx.fillStyle = `rgb(${id.data[0]},${id.data[1]},${id.data[2]})`;
-      ctx.fillRect(x, y, bw, bh);
+// 3 - pixelate
+function effect3_pixelate(octx, W, H) {
+  var blockSize = 20;
+  for (var y = 0; y < H; y += blockSize) {
+    for (var x = 0; x < W; x += blockSize) {
+      var pixel = octx.getImageData(x, y, 1, 1).data;
+      octx.fillStyle = 'rgb(' + pixel[0] + ',' + pixel[1] + ',' + pixel[2] + ')';
+      octx.fillRect(x, y, blockSize, blockSize);
     }
   }
 }
 
-function fxDuotone(ctx, W, H) {
-  const id = ctx.getImageData(0, 0, W, H);
-  const d = id.data;
-
-  const sr = 15, sg = 10, sb = 60;
-  const hr = 255, hg = 200, hb = 80;
-  for (let i = 0; i < d.length; i += 4) {
-    const lum = 0.299 * d[i] + 0.587 * d[i+1] + 0.114 * d[i+2];
-    const t = lum / 255;
-    d[i]   = Math.round(sr + t * (hr - sr));
-    d[i+1] = Math.round(sg + t * (hg - sg));
-    d[i+2] = Math.round(sb + t * (hb - sb));
-  }
-  ctx.putImageData(id, 0, 0);
+// 4 - flip upside down
+function effect4_flip(octx, W, H) {
+  var snapshot = octx.getImageData(0, 0, W, H);
+  octx.save();
+  octx.translate(0, H);
+  octx.scale(1, -1);
+  octx.putImageData(snapshot, 0, 0);
+  octx.restore();
 }
 
-function fxMirror(ctx, W, H) {
-  const half = ctx.getImageData(0, 0, Math.floor(W/2), H);
-  const tmp = document.createElement('canvas');
-  tmp.width = W; tmp.height = H;
-  const tc = tmp.getContext('2d');
+// 5 - mirror left side onto right
+function effect5_mirror(octx, W, H) {
+  var half = octx.getImageData(0, 0, Math.floor(W / 2), H);
+  var tmp = document.createElement('canvas');
+  tmp.width = W;
+  tmp.height = H;
+  var tc = tmp.getContext('2d');
   tc.putImageData(half, 0, 0);
-  ctx.save();
-  ctx.translate(W, 0);
-  ctx.scale(-1, 1);
-  ctx.drawImage(tmp, 0, 0);
-  ctx.restore();
+  octx.save();
+  octx.translate(W, 0);
+  octx.scale(-1, 1);
+  octx.drawImage(tmp, 0, 0);
+  octx.restore();
 }
 
-function fxBlur(ctx, W, H) {
-  const tmp = document.createElement('canvas');
-  const factor = 0.06;
-  tmp.width = Math.max(1, Math.floor(W * factor));
-  tmp.height = Math.max(1, Math.floor(H * factor));
-  const tc = tmp.getContext('2d');
-  tc.drawImage(ctx.canvas, 0, 0, tmp.width, tmp.height);
-  ctx.save();
-  ctx.imageSmoothingEnabled = true;
-  ctx.imageSmoothingQuality = 'high';
-  ctx.drawImage(tmp, 0, 0, W, H);
-  ctx.restore();
+// 6 - blur (shrink then stretch back up)
+function effect6_blur(octx, W, H) {
+  var small = document.createElement('canvas');
+  small.width = Math.floor(W * 0.05);
+  small.height = Math.floor(H * 0.05);
+  var sc = small.getContext('2d');
+  sc.drawImage(octx.canvas, 0, 0, small.width, small.height);
+  octx.drawImage(small, 0, 0, W, H);
 }
 
-function fxScanlines(ctx, W, H) {
-  const spacing = 3;
-  ctx.save();
-  ctx.fillStyle = 'rgba(0,0,0,0.38)';
-  for (let y = 0; y < H; y += spacing) {
-    ctx.fillRect(0, y, W, 1);
+// 7 - scanlines
+function effect7_scanlines(octx, W, H) {
+  octx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+  for (var y = 0; y < H; y += 4) {
+    octx.fillRect(0, y, W, 2);
   }
-  ctx.restore();
 }
 
-function fxChannels(ctx, W, H) {
-  const id = ctx.getImageData(0, 0, W, H);
-  const d = id.data;
-  const shift = 12;
-  const out = new Uint8ClampedArray(d);
-  for (let i = 0; i < d.length; i += 4) {
-    const px = (i / 4) | 0;
-    const x = px % W;
-    // red channel: shift right
-    const rx = Math.min(W - 1, x + shift);
-    const ri = (((i / 4 / W) | 0) * W + rx) * 4;
-    out[ri]   = d[i];
-    // blue channel: shift left
-    const bx = Math.max(0, x - shift);
-    const bi = (((i / 4 / W) | 0) * W + bx) * 4;
-    out[bi+2] = d[i+2];
+// 8 - brighten
+function effect8_brightness(octx, W, H) {
+  var data = octx.getImageData(0, 0, W, H);
+  var p = data.data;
+  for (var i = 0; i < p.length; i += 4) {
+    p[i]     = Math.min(255, p[i]     + 80);
+    p[i + 1] = Math.min(255, p[i + 1] + 80);
+    p[i + 2] = Math.min(255, p[i + 2] + 80);
   }
-  const outId = new ImageData(out, W, H);
-  ctx.putImageData(outId, 0, 0);
+  octx.putImageData(data, 0, 0);
 }
 
-function fxMosaic(ctx, W, H) {
-  const id = ctx.getImageData(0, 0, W, H);
-  const d = id.data;
-  const size = 28;
-  for (let by = 0; by < H; by += size) {
-    for (let bx = 0; bx < W; bx += size) {
-      let r = 0, g = 0, b = 0, count = 0;
-      for (let y = by; y < Math.min(H, by + size); y++) {
-        for (let x = bx; x < Math.min(W, bx + size); x++) {
-          const i = (y * W + x) * 4;
-          r += d[i]; g += d[i+1]; b += d[i+2]; count++;
-        }
-      }
-      r = r/count|0; g = g/count|0; b = b/count|0;
-      const cx = bx + size/2, cy = by + size/2;
-      const radius = (size/2) * 0.82;
-      ctx.save();
-      ctx.fillStyle = `rgb(${r*0.2|0},${g*0.2|0},${b*0.2|0})`;
-      ctx.fillRect(bx, by, Math.min(size, W-bx), Math.min(size, H-by));
-      ctx.beginPath();
-      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgb(${r},${g},${b})`;
-      ctx.fill();
-      ctx.restore();
+// 9 - red tint
+function effect9_red(octx, W, H) {
+  octx.fillStyle = 'rgba(255, 0, 0, 0.3)';
+  octx.fillRect(0, 0, W, H);
+}
+
+// ---- HELPERS ----
+
+function updateBadges() {
+  var badges = document.querySelectorAll('.key-badge');
+  for (var i = 0; i < badges.length; i++) {
+    var key = badges[i].getAttribute('data-key');
+    if (activeEffects.includes(key)) {
+      badges[i].classList.add('active');
+    } else {
+      badges[i].classList.remove('active');
     }
   }
-}
-
-
-function showLabel(text) {
-  effectLabel.textContent = text;
-  effectLabel.classList.add('show');
-  clearTimeout(labelTimeout);
-  labelTimeout = setTimeout(() => effectLabel.classList.remove('show'), 1800);
-}
-
-function flashKey(k) {
-  const badge = document.querySelector(`.key-badge[data-key="${k}"]`);
-  if (!badge) return;
-  badge.style.background = 'rgba(255,255,255,0.25)';
-  setTimeout(() => badge.style.background = '', 120);
-}
-
-function updateKeyBadges() {
-  document.querySelectorAll('.key-badge').forEach(b => {
-    const k = b.dataset.key;
-    b.classList.toggle('active', activeEffects.has(k));
-  });
 }

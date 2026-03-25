@@ -3,10 +3,8 @@
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background: #f7f7f2;
   font-family: 'DM Mono', monospace;
-  cursor: default;
 }
 
 #canvas {
@@ -26,7 +24,6 @@ body {
   justify-content: center;
   gap: 16px;
   pointer-events: none;
-  transition: opacity 0.5s ease;
 }
 
 #empty.hidden { 
@@ -54,6 +51,11 @@ body {
   font-size: 10px;
   display: flex;
   align-items: center;
+  background: whitesmoke;
+  border: 0;
+  padding: 20px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #file-input { display: none; }
