@@ -9,7 +9,6 @@ body {
   cursor: default;
 }
 
-/* CANVAS fills everything */
 #canvas {
   position: fixed;
   inset: 0;
@@ -18,7 +17,6 @@ body {
   display: block;
 }
 
-/* EMPTY STATE */
 #empty-state {
   position: fixed;
   inset: 0;
@@ -54,7 +52,6 @@ body {
   color: #333;
 }
 
-/* TOP BAR */
 #ui {
   position: fixed;
   top: 0;

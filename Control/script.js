@@ -12,7 +12,6 @@ let activeEffects = new Set();
 let labelTimeout = null;
 let renderScheduled = false;
 
-// EFFECT DEFINITIONS
 const EFFECTS = {
   '1': { name: 'Invert',     fn: fxInvert },
   '2': { name: 'Glitch',     fn: fxGlitch },
@@ -25,7 +24,6 @@ const EFFECTS = {
   '9': { name: 'Mosaic',     fn: fxMosaic },
 };
 
-// RESIZE
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -34,7 +32,6 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-// LOAD IMAGE
 fileInput.addEventListener('change', e => {
   const file = e.target.files[0];
   if (!file) return;
@@ -55,7 +52,6 @@ fileInput.addEventListener('change', e => {
   fileInput.value = '';
 });
 
-// RESTART
 restartBtn.addEventListener('click', () => {
   sourceImage = null;
   activeEffects.clear();
@@ -66,7 +62,6 @@ restartBtn.addEventListener('click', () => {
   showLabel('—');
 });
 
-// KEYBOARD
 document.addEventListener('keydown', e => {
   const k = e.key;
   if (!EFFECTS[k]) return;
@@ -96,20 +91,17 @@ function render() {
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0, 0, W, H);
 
-  // Cover-fit the image
   const scale = Math.max(W / sourceImage.width, H / sourceImage.height);
   const sw = sourceImage.width * scale;
   const sh = sourceImage.height * scale;
   const sx = (W - sw) / 2;
   const sy = (H - sh) / 2;
 
-  // Draw base to offscreen canvas
   const off = document.createElement('canvas');
   off.width = W; off.height = H;
   const octx = off.getContext('2d');
   octx.drawImage(sourceImage, sx, sy, sw, sh);
 
-  // Apply effects in a fixed order
   const order = ['6','3','9','5','4','1','8','2','7'];
   for (const k of order) {
     if (activeEffects.has(k)) {
@@ -120,7 +112,6 @@ function render() {
   ctx.drawImage(off, 0, 0);
 }
 
-// ─── EFFECTS ────────────────────────────────────────────────
 
 function fxInvert(ctx, W, H) {
   const id = ctx.getImageData(0, 0, W, H);
@@ -163,7 +154,7 @@ function fxPixelate(ctx, W, H) {
 function fxDuotone(ctx, W, H) {
   const id = ctx.getImageData(0, 0, W, H);
   const d = id.data;
-  // shadow: deep indigo, highlight: warm amber
+
   const sr = 15, sg = 10, sb = 60;
   const hr = 255, hg = 200, hb = 80;
   for (let i = 0; i < d.length; i += 4) {
@@ -262,7 +253,6 @@ function fxMosaic(ctx, W, H) {
   }
 }
 
-// ─── UI HELPERS ─────────────────────────────────────────────
 
 function showLabel(text) {
   effectLabel.textContent = text;
