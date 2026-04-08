@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: darkseagreen;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    padding-top: 1cm;
+    color: rgb(60, 33, 122); 
+}
+.ok {
+    padding-left: 31px;
+    padding-right: 31px;
+    display:flow-root;
+    font-size: 15px;
+    justify-content: center;
+    padding-top: .5cm;
+    color: rgb(86, 47, 175); 
+}
+
