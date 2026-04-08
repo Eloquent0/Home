@@ -13,7 +13,7 @@ body {
     font-size: 30px;
     justify-content: center;
     padding-top: 1cm;
-    color: rgb(60, 33, 122); 
+    color: rgb(116, 72, 2); 
 }
 .ok {
     padding-left: 31px;
@@ -22,6 +22,37 @@ body {
     font-size: 15px;
     justify-content: center;
     padding-top: .5cm;
-    color: rgb(86, 47, 175); 
+    color: rgb(0, 0, 0); 
 }
 
+.container2 {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    padding-top: 1cm;
+    color: rgb(27, 156, 102); 
+}
+
+.container3 {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    padding-top: 1cm;
+    color: rgb(51, 62, 67); 
+}
+
+.container4 {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    padding-top: 1cm;
+    color: rgb(194, 220, 28); 
+}
+
+.container5 {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    padding-top: 1cm;
+    color: rgb(254, 26, 170); 
+}
