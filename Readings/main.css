@@ -56,3 +56,12 @@ body {
     padding-top: 1cm;
     color: rgb(254, 26, 170); 
 }
+.ok1 {
+    padding-left: 31px;
+    padding-right: 31px;
+    display:flow-root;
+    font-size: 15px;
+    justify-content: center;
+    padding-top: .5cm;
+    color: rgb(124, 124, 124); 
+}
