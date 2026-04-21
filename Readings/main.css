@@ -88,5 +88,5 @@ body {
 .frame3 {
     min-height: 100%;
     border: 62px solid rgb(230, 250, 255);
-    padding: 24px; /* text space from frame */
+    padding: 24px; 
 }
