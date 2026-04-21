@@ -9,7 +9,7 @@ body {
         border: 6px solid #111111;  
       padding: 12px;
         margin: 12px 0;
-             border: 6px solid rgb(230, 250, 255);  
+             border: 6px solid #2d9b7a;  
                 padding: 12px;
             margin: 12px 0;
     justify-content: center;
@@ -75,18 +75,18 @@ body {
 
 .frame1 {
     min-height: 100vh;
-    border: 26px solid rgb(230, 250, 255);
+    border: 26px solid #2d9b7a ;
     padding: 12px;
 }
 
 .frame2 {
     min-height: 100%;
-    border: 123px solid rgb(230, 250, 255);
+    border: 123px solid #2d9b7a ;
     padding: 12px;
 }
 
 .frame3 {
     min-height: 100%;
-    border: 62px solid rgb(230, 250, 255);
+    border: 62px solid #2d9b7a ;
     padding: 24px; 
 }
