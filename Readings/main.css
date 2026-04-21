@@ -4,7 +4,14 @@
 
 body {
     margin: 0;
+    min-height: 100vh;
     background-color: darkseagreen;
+        border: 6px solid #111111;  
+      padding: 12px;
+        margin: 12px 0;
+             border: 6px solid rgb(230, 250, 255);  
+                padding: 12px;
+            margin: 12px 0;
     justify-content: center;
 }
 
@@ -64,4 +71,22 @@ body {
     justify-content: center;
     padding-top: .5cm;
     color: rgb(124, 124, 124); 
+}
+
+.frame1 {
+    min-height: 100vh;
+    border: 26px solid rgb(230, 250, 255);
+    padding: 12px;
+}
+
+.frame2 {
+    min-height: 100%;
+    border: 123px solid rgb(230, 250, 255);
+    padding: 12px;
+}
+
+.frame3 {
+    min-height: 100%;
+    border: 62px solid rgb(230, 250, 255);
+    padding: 24px; /* text space from frame */
 }
