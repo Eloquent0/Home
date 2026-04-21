@@ -9,7 +9,7 @@ body {
 .dot {
       position: absolute;
       top: 35%;
-      left: 50%;
+      left: 20%;
       width: 20px;
       height: 20px;
       background-color: red;
@@ -18,6 +18,21 @@ body {
     }
 
     .dot:hover {
+      background-color: darkred;
+      cursor: pointer;
+    }
+.dot2 {
+      position: absolute;
+      top: 55%;   
+      left: 80%;     
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .dot2:hover {
       background-color: darkred;
       cursor: pointer;
     }
