@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -6,6 +8,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: darkseagreen;
+    font-family: 'Michroma', sans-serif;
         border: 6px solid #111111;  
       padding: 12px;
         margin: 12px 0;
@@ -44,6 +47,7 @@ body {
     display: flex;
     font-size: 30px;
     justify-content: center;
+    text-align: center;
     padding-top: 1cm;
     color: rgb(51, 62, 67); 
 }
